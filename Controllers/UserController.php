@@ -39,5 +39,11 @@ require_once "Models/userModel.php";
     }
 
 
+    public function destroy($id)
+    {
+        $this->users->deleteUser($id);
+        $this->redirect('/user');
+    }
+
 }
 ?>

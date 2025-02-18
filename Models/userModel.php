@@ -53,5 +53,15 @@
         echo "Error adding user: " . $e->getMessage();
     }
     }
+
+
+    public function deleteUser($id)
+    {
+        try {
+            $this->db->query("DELETE FROM users WHERE id = :id", [':id' => $id]);
+        } catch (PDOException $e) {
+            echo "Error deleting product: " . $e->getMessage();
+        }
+    }
 }
 ?>
