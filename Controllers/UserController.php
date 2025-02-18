@@ -26,29 +26,18 @@ require_once "Models/userModel.php";
         $this->view('/users/create');
     }
 
-    // public function store()
-    // {
-    //     $name = $_POST['username'];
-    //     $userEmail = $_POST['email'];
-    //     $password = $_POST['pswd'];
-    //     $passwordEnypt = password_hash($password, PASSWORD_BCRYPT);
-    //     $userRole = $_POST['role'];
-
-    //     $this->users->addUser(null, $name, $userEmail, $$passwordEnypt, $userRole);
-    //     $this->redirect('/user');
-    // }
-
     public function store()
-{
-    $name = $_POST['username'];
-    $userEmail = $_POST['email'];
-    $password = $_POST['pswd'];
-    $passwordEnypt = password_hash($password, PASSWORD_BCRYPT); // Correctly hash the password
-    $userRole = $_POST['role'];
+    {
+        $name = $_POST['username'];
+        $userEmail = $_POST['email'];
+        $password = $_POST['passwordd'];
+        $passwordEnypt = password_hash($password, PASSWORD_BCRYPT);
+        $userRole = $_POST['role'];
 
-    // Corrected the variable reference
-    $this->users->addUser (null, $name, $userEmail, $passwordEnypt, $userRole);
-    $this->redirect('/user');
-}
+        $this->users->addUser(null, $name, $userEmail, $passwordEnypt, $userRole);
+        $this->redirect('/user');
+    }
+
+
 }
 ?>

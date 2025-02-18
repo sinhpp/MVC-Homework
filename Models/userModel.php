@@ -36,35 +36,16 @@
     }
 
 
-    // public function addUser($userID, $name, $userEmail, $password, $userRole)
-    // {
-    //     try {
-    //         $this->db->query(
-    //             "INSERT INTO users (userID, name, userEmail, password, userRole) VALUES (:id, :name, :email, :password, :role)",
-    //             [
-    //                 ':id' => $userID,
-    //                 ':name' => $name,
-    //                 ':email' => $userEmail,
-    //                 ':password' => $password,
-    //                 ':role' => $userRole,
-    //             ]
-    //         );
-    //     } catch (PDOException $e) {
-    //         echo "Error adding user: " . $e->getMessage();
-    //     }
-    // }
-
-
     public function addUser ($userID, $name, $userEmail, $password, $userRole)
     {
     try {
         $this->db->query(
-            "INSERT INTO users (userID, name, userEmail, password, userRole) VALUES (:id, :name, :email, :password, :role)",
+            "INSERT INTO users (id, name, email, passwordd, role) VALUES (:id, :name, :email, :passwordd, :role)",
             [
                 ':id' => $userID, // Assuming userID is auto-incremented, you can pass null or omit it
                 ':name' => $name,
                 ':email' => $userEmail,
-                ':password' => $password,
+                ':passwordd' => $password,
                 ':role' => $userRole,
             ]
         );
